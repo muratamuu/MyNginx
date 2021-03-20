@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker run -it --rm --name certbot \
+       -v $PWD/conf.d/certs:/etc/letsencrypt \
+       -v $PWD/docs:/docs \
+       certbot/certbot certonly \
+       --webroot -w /docs \
+       -d www.muratamuu.com
